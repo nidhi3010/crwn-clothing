@@ -63,7 +63,7 @@ render(){
                   Sign in with Google
                   </CustomButton>
         </div>
-            
+              
          </form>
         </div>
     );

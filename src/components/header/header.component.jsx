@@ -11,7 +11,7 @@ import './header.styles.scss';
 const Header = ({currentUser}) => (
     <div className='header'>
       <Link className='logo-container' to = "/">
-          <Logo className='logo' />
+          <Logo className='logo' /> 
 
       </Link>
 
@@ -30,7 +30,7 @@ const Header = ({currentUser}) => (
         )  : (
           <Link className='option' to='/signin'>
               SIGN IN
-          </Link>
+          </ Link>
          ) }
      
     </div>
