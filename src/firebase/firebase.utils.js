@@ -13,23 +13,21 @@ const config ={
 };
 
   export const createUserProfileDocument =  async (userAuth, additionalData) => {
-    //if userauth is not exist then we exit form this function 
-    //if userauth is exist then we are going to query inside a firestore for document
+ 
     if (!userAuth) return;
 
     const userRef = firestore.doc(`users/${userAuth.uid}`);
 
     const snapShot = await userRef.get();
 
-   //if snapshot doesn't exist we  create a data
+
    if(!snapShot.exists) { 
-  //the data which are we want
+
      const { displayName, email } = userAuth;
-     //create newdata object
+    
      const createdAt = new Date();
 
 
-     //wrap inside try catch block
      try{
        await userRef.set({
          displayName,
