@@ -13,7 +13,7 @@ import CheckoutPage from './pages/checkout/checkout.component';
 
 import Header from './components/header/header.component';
 
-import { addCollectionAndDocuments, auth, createUserProfileDocument} from './firebase/firebase.utils';
+import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 
 import { setCurrentUser } from './redux/user/user.actions';
 import { selectCurrentUser } from './redux/user/user.selectors';
@@ -33,7 +33,7 @@ class App extends React.Component {
           setCurrentUser({
             id: snapShot.id,
             ...snapShot.data() 
-          }); 
+          });  
 
 
         }); 
@@ -71,7 +71,7 @@ const mapDispatchToProps = dispatch => ({
   setCurrentUser: user => dispatch(setCurrentUser(user))
 });
 
-export default connect(
+export default connect( 
   mapStateToProps,
   mapDispatchToProps
   )(App);
